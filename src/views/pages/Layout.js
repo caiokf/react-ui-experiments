@@ -2,12 +2,14 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import css from 'views/styles'
 
+import GithubCorner from 'views/pages/github-corner/github.corner.icon'
+
 export default class Layout extends Component {
   render() {
     return (
       <Body>
         <Header>
-          React App Header
+          <GithubCorner href={'#'} />
         </Header>
 
         <Main>
@@ -26,10 +28,6 @@ const Body = styled.div`
   align-items: stretch;
 `
 const Header = styled.header`
-  background-color: ${css.colors.teal};
-  color: ${css.colors.white};
-  position: relative;
-  padding: ${css.dimensions.small};
 `
 const Main = styled.main`
   padding: ${css.dimensions.medium};
