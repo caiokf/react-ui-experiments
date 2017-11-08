@@ -1,6 +1,6 @@
 export default {
   default: `
-    font-family: sans-serif;
+    font-family: 'Roboto Mono', monospace;
     font-style: normal;
     font-weight: 300;
     font-size: 14px;
