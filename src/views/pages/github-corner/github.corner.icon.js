@@ -22,8 +22,8 @@ const octoWave = keyframes`
   40%, 80% { transform: rotate(10deg); }
 `
 const Icon = styled.a`
-  color: ${props => props.foreground || '#FFFFFF'};
-  fill: ${props => props.background || '#000000'};
+  color: ${props => props.background || '#FFFFFF'};
+  fill: ${props => props.foreground || '#000000'};
   position: absolute;
   top: 0;
   border: 0;

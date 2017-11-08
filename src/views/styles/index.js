@@ -6,12 +6,8 @@ const baseStyles = `
   body {
     margin: 0;
     padding: 0;
-    background-color: ${colors.porcelain};
+    background-color: ${colors.white};
     ${typography.default}
-  }
-
-  a {
-    ${typography.link}
   }
 `
 
