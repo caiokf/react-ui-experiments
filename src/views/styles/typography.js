@@ -1,6 +1,6 @@
 export default {
   default: `
-    font-family: Museo Sans, sans-serif;
+    font-family: sans-serif;
     font-style: normal;
     font-weight: 300;
     font-size: 14px;

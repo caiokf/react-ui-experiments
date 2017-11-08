@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
-import Layout from 'views/pages/Layout'
+import Layout from 'views/pages/layout'
+import { Button } from 'views/components'
 
 class HomePage extends Component {
   render() {
     return (
       <Layout title="Home Page">
-        Demo App
+        <Button onClick={() => this.props.history.push('/animated-status-icons')}>
+          Animated Status Icons
+        </Button>
       </Layout>
     )
   }

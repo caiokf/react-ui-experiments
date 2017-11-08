@@ -11,8 +11,8 @@ export default class Button extends Component {
   }
 }
 
-const StyledButton = styled.input`
-  ${css.fonts.regular}
+const StyledButton = styled.button`
+  ${css.typography.default}
   border-color: ${css.colors.teal};
   background-color: ${css.colors.teal};
   color: ${css.colors.white};

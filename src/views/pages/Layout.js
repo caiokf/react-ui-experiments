@@ -13,10 +13,6 @@ export default class Layout extends Component {
         <Main>
           {this.props.children}
         </Main>
-
-        <Footer>
-          &copy; 2017 CaioKF footer
-        </Footer>
       </Body>
     )
   }
