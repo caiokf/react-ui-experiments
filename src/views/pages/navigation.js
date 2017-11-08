@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router'
 import styled from 'styled-components'
 import css from 'views/styles'
 import { lighten, darken } from 'polished'
 import { Link } from 'react-router-dom'
 
-export default class NavigationBar extends Component {
+class NavigationBar extends Component {
   render() {
     const props = {
       background: '#000000',
@@ -21,7 +22,7 @@ export default class NavigationBar extends Component {
           </BackButtonIcon>
         </NavigationLink>
 
-        <NavigationLink to={'.'} title='Refresh this demo' {...props}>
+        <NavigationLink to={this.props.history.location} replace title='Refresh this demo' {...props}>
           <RefreshButtonIcon height="18px" width="18px" viewBox="0 0 32 32">
             <path d="M28,16c-1.219,0-1.797,0.859-2,1.766C25.269,21.03,22.167,26,16,26c-5.523,0-10-4.478-10-10S10.477,6,16,6  c2.24,0,4.295,0.753,5.96,2H20c-1.104,0-2,0.896-2,2s0.896,2,2,2h6c1.104,0,2-0.896,2-2V4c0-1.104-0.896-2-2-2s-2,0.896-2,2v0.518  C21.733,2.932,18.977,2,16,2C8.268,2,2,8.268,2,16s6.268,14,14,14c9.979,0,14-9.5,14-11.875C30,16.672,28.938,16,28,16z"/>
           </RefreshButtonIcon>
@@ -75,3 +76,5 @@ const Navigation = styled.div`
     transform: rotate3d(0,0,1,22.5deg);
   }
 `
+
+export default withRouter(NavigationBar)
