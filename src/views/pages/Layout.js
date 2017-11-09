@@ -43,14 +43,14 @@ const Body = styled.div`
   min-height: 100vh;
   align-items: stretch;
   background-color: ${props => props.background};
-  color: ${props => props.foreground}
+  color: ${props => props.foreground};
 `
 const Header = styled.header`
   padding: ${css.dimensions.medium};
+  padding-right: 0;
   z-index: 100;
   display: flex;
   align-items: center;
-  width: 100%;
 `
 const quotes = `
   padding: 0 .5em;
@@ -73,8 +73,8 @@ const Title = styled.h2`
   }
 `
 const Main = styled.main`
-  flex: 1;
   display: flex;
   flex-direction: column;
   min-width: 25rem;
+  flex: 1;
 `
