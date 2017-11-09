@@ -4,6 +4,8 @@ import _ from 'lodash'
 
 import colors from './colors'
 import Progress from './minimalist.form.progress'
+import Counter from './minimalist.form.counter'
+import ArrowButton from './minimalist.form.arrow.button'
 
 export default class MinimalistForm extends Component {
   constructor(props) {
@@ -32,15 +34,9 @@ export default class MinimalistForm extends Component {
     const currentProgress = nextQuestion * ( 100 / this.props.questions.length )
 
     this.setState({
-      //animatingNextQuestion: true,
       progress: currentProgress,
       current: this.state.current + 1,
     })
-
-    setTimeout(() => { this.setState({
-      animatingNextQuestion: false,
-      //current: this.state.current + 1,
-    })}, 400)
 
     this.submit()
   }
@@ -49,14 +45,12 @@ export default class MinimalistForm extends Component {
 
   renderQuestionItem(question, index) {
     const currentClass = index === this.state.current ? 'current' : ''
-    const formAnimatingClass = this.state.animatingNextQuestion ? 'animating-next' : ''
-    const labelClasses = `${currentClass} ${formAnimatingClass}`
 
     return (
       <QuestionItem className={currentClass}>
         <span>
           <QuestionStatement
-            className={labelClasses}
+            className={currentClass}
             for={`question-${index}`}>
 
             {question.statement}
@@ -86,30 +80,19 @@ export default class MinimalistForm extends Component {
             {_.map(this.props.questions, (x, i) => this.renderQuestionItem(x, i))}
           </Questions>
 
-          <Submit type="submit">Send answers</Submit>
-
-          <div class="controls">
-            <NextQuestionButton
-              onClick={(ev) => this.next(ev)}
-              ariaLabel="Next"
-              className="show" />
+          <div>
+            <ArrowButton onClick={(ev) => this.next(ev)} />
 
             <Progress progress={this.state.progress} />
 
-            <QuestionCounter className={formAnimatingClass}>
-              <QuestionCounterCurrentNumber className={formAnimatingClass}>
-                {this.state.current + 1}
-              </QuestionCounterCurrentNumber>
-
-              <QuestionCounterTotalNumber>
-                {this.props.questions.length}
-              </QuestionCounterTotalNumber>
-            </QuestionCounter>
+            <Counter current={this.state.current + 1} total={this.props.questions.length} />
 
             <span class="error-message"></span>
           </div>
 
+          <Submit type="submit">Send answers</Submit>
         </div>
+
         <span class="final-message"></span>
       </StyledForm>
     )
@@ -181,9 +164,6 @@ const QuestionStatement = styled.label`
   &.current {
     transition: none;
     transform: translateY(0);
-  }
-
-  &.animating-next {
     animation: ${moveUpFromDown} 0.4s both;
   }
 `
@@ -208,85 +188,4 @@ const QuestionInput = styled.input`
   &:focus {
     outline: none;
   }
-`
-const NextQuestionButton = styled.button`
-  position: absolute;
-  right: 0;
-  bottom: 2.15em;
-  display: block;
-  padding: 0;
-  width: 2em;
-  height: 2em;
-  border: none;
-  background: none;
-  color: rgba(0,0,0,0.4);
-  text-align: center;
-  opacity: 0;
-  z-index: 100;
-  cursor: pointer;
-  transition: transform 0.3s, opacity 0.3s;
-  transform: translateX(-20%);
-  pointer-events: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-
-  &:hover {
-    color: rgba(0,0,0,0.5);
-  }
-
-  &::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    content: '>';
-    text-transform: none;
-    font-weight: normal;
-    font-style: normal;
-    font-variant: normal;
-    line-height: 2;
-    speak: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  &.show {
-    opacity: 1;
-    transform: translateX(0);
-    pointer-events: auto;
-  }
-`
-const QuestionCounter = styled.span`
-  position: absolute;
-  right: 0;
-  overflow: hidden;
-  margin: 0.4em 0;
-  width: 3em;
-  font-weight: 700;
-  font-size: 0.6em;
-
-  &::after {
-    position: absolute;
-    left: 50%;
-    content: '/';
-    opacity: 0.4;
-    transform: translateX(-50%);
-  }
-
-  span {
-    float: left;
-    width: 50%;
-    text-align: center;
-  }
-`
-const QuestionCounterCurrentNumber = styled.span`
-  float: left;
-
-  &.animating-next {
-  	transition: transform 0.4s;
-  	transform: translateY(-100%);
-  }
-`
-const QuestionCounterTotalNumber = styled.span`
-
 `
