@@ -14,8 +14,14 @@ export default class AnimatedStatusIconsPage extends Component {
 
     return (
       <Layout title="Animated Status Icons" {...props}>
-        Animated Status Icons
+        <Container>
+          Animated Icons
+        </Container>
       </Layout>
     )
   }
 }
+const Container = styled.div`
+  background: white;
+  flex: 1;
+`

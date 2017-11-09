@@ -13,10 +13,15 @@ export default class Layout extends Component {
       foreground: this.props.foreground || '#000000',
     }
 
+    const navigationColors = {
+      background: colors.foreground,
+      foreground: colors.background,
+    }
+
     return (
       <Body {...colors}>
         <Header>
-          <Navigation {...colors} darken/>
+          <Navigation {...navigationColors}/>
 
           <Title {...colors}>{this.props.title}</Title>
 
@@ -53,6 +58,7 @@ const quotes = `
 `
 const Title = styled.h2`
   flex: 1;
+  margin-right: 8rem;
 
   &::before {
     ${quotes}
@@ -67,7 +73,6 @@ const Title = styled.h2`
   }
 `
 const Main = styled.main`
-  padding: ${css.dimensions.medium};
   flex: 1;
   display: flex;
   flex-direction: column;
