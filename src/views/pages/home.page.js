@@ -11,6 +11,10 @@ class HomePage extends Component {
         <Button onClick={() => this.props.history.push('/animated-status-icons')}>
           Animated Status Icons
         </Button>
+
+        <Button onClick={() => this.props.history.push('/minimalist-form')}>
+          Minimalist Form
+        </Button>
       </Layout>
     )
   }

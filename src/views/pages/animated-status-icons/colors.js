@@ -1,7 +1,6 @@
 export default {
   foreground: '#5F646C',
   background: '#FFFFFF',
-  accent: '#e6629a',
 
   notifications: {
     green: '#A5DC86',
