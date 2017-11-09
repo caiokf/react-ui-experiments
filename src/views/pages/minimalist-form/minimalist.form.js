@@ -43,8 +43,17 @@ export default class MinimalistForm extends Component {
 
   submit() { }
 
+  componentDidMount() {
+    this.currentInput && this.currentInput.focus()
+  }
+
+  componentDidUpdate() {
+    this.currentInput && this.currentInput.focus()
+  }
+
   renderQuestionItem(question, index) {
-    const currentClass = index === this.state.current ? 'current' : ''
+    const isCurrent = index === this.state.current
+    const currentClass = isCurrent ? 'current' : ''
 
     return (
       <QuestionItem className={currentClass}>
@@ -58,6 +67,7 @@ export default class MinimalistForm extends Component {
         </span>
 
         <QuestionInput
+          innerRef={(input) => { if (isCurrent) { this.currentInput = input } }}
           autocomplete="off"
           onKeyDown={(ev) => this.inputKeyDown(ev)}
           className={currentClass}
@@ -70,10 +80,8 @@ export default class MinimalistForm extends Component {
   }
 
   render() {
-    const formAnimatingClass = this.state.animatingNextQuestion ? 'animating-next' : ''
-
     return (
-      <StyledForm {...this.props} className={formAnimatingClass}>
+      <StyledForm {...this.props}>
         <div class="simform-inner">
 
           <Questions>
