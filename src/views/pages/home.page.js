@@ -19,6 +19,10 @@ class HomePage extends Component {
         <Button onClick={() => this.props.history.push('/link-styles')}>
           Link Styles
         </Button>
+
+        <Button onClick={() => this.props.history.push('/water-effects')}>
+          Water Effects
+        </Button>
       </Layout>
     )
   }
