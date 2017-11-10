@@ -9,6 +9,9 @@ import LinkSlideUpUnderline from './links/link.slide.up.underline'
 import LinkSlideDownUnderline from './links/link.slide.down.underline'
 import LinkRollUp from './links/link.roll.up'
 import LinkDoubleLine from './links/link.double.line'
+import LinkSubtextDoubleLine from './links/link.subtext.double.line'
+import LinkSwitchBorders from './links/link.switch.borders'
+import LinkPushOut from './links/link.pushout'
 
 export default class LinkStylesPage extends Component {
   render() {
@@ -38,12 +41,30 @@ export default class LinkStylesPage extends Component {
             </nav>
           </Section>
 
+          <Section background={colors.background4} foreground={colors.foreground}>
+            <nav>
+              <LinkDoubleLine href="#">Home</LinkDoubleLine>
+              <LinkDoubleLine href="#">Profile</LinkDoubleLine>
+              <LinkDoubleLine href="#">Settings</LinkDoubleLine>
+              <LinkDoubleLine href="#">Contact</LinkDoubleLine>
+            </nav>
+          </Section>
+
           <Section background={colors.background3} foreground={colors.foreground}>
             <nav>
               <LinkSlideDownUnderline href="#">Home</LinkSlideDownUnderline>
               <LinkSlideDownUnderline href="#">Profile</LinkSlideDownUnderline>
               <LinkSlideDownUnderline href="#">Settings</LinkSlideDownUnderline>
               <LinkSlideDownUnderline href="#">Contact</LinkSlideDownUnderline>
+            </nav>
+          </Section>
+
+          <Section background={colors.background5} foreground={colors.foreground}>
+            <nav>
+              <LinkSubtextDoubleLine href="#" subtext={'visit your dashboard'}>Home</LinkSubtextDoubleLine>
+              <LinkSubtextDoubleLine href="#" subtext={'tell us your info'}>Profile</LinkSubtextDoubleLine>
+              <LinkSubtextDoubleLine href="#" subtext={'configure your account'}>Settings</LinkSubtextDoubleLine>
+              <LinkSubtextDoubleLine href="#" subtext={'talk to us'}>Contact</LinkSubtextDoubleLine>
             </nav>
           </Section>
 
@@ -56,12 +77,21 @@ export default class LinkStylesPage extends Component {
             </nav>
           </Section>
 
-          <Section background={colors.background4} foreground={colors.foreground}>
+          <Section background={colors.foreground} foreground={colors.foregroundDark}>
             <nav>
-              <LinkDoubleLine href="#">Home</LinkDoubleLine>
-              <LinkDoubleLine href="#">Profile</LinkDoubleLine>
-              <LinkDoubleLine href="#">Settings</LinkDoubleLine>
-              <LinkDoubleLine href="#">Contact</LinkDoubleLine>
+              <LinkSwitchBorders foreground={colors.foregroundDark} href="#">Home</LinkSwitchBorders>
+              <LinkSwitchBorders foreground={colors.foregroundDark} href="#">Profile</LinkSwitchBorders>
+              <LinkSwitchBorders foreground={colors.foregroundDark} href="#">Settings</LinkSwitchBorders>
+              <LinkSwitchBorders foreground={colors.foregroundDark} href="#">Contact</LinkSwitchBorders>
+            </nav>
+          </Section>
+
+          <Section background={colors.background6} foreground={colors.foreground}>
+            <nav>
+              <LinkPushOut href="#">Home</LinkPushOut>
+              <LinkPushOut href="#">Profile</LinkPushOut>
+              <LinkPushOut href="#">Settings</LinkPushOut>
+              <LinkPushOut href="#">Contact</LinkPushOut>
             </nav>
           </Section>
 
