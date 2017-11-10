@@ -15,13 +15,17 @@ class HomePage extends Component {
         <Button onClick={() => this.props.history.push('/minimalist-form')}>
           Minimalist Form
         </Button>
+
+        <Button onClick={() => this.props.history.push('/link-styles')}>
+          Link Styles
+        </Button>
       </Layout>
     )
   }
 }
 
 const Container = styled.div`
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: flex-start;
   display: flex;
   flex: 1;
