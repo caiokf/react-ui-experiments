@@ -8,4 +8,7 @@ export default {
   background4: '#0ac2d2',
   background5: '#7bb7fa',
   background6: '#435a6b',
+  background7: '#f19f0f',
+  background8: '#9e487f',
+  background9: '#72BF7B',
 }

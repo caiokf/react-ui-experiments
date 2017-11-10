@@ -12,6 +12,11 @@ import LinkDoubleLine from './links/link.double.line'
 import LinkSubtextDoubleLine from './links/link.subtext.double.line'
 import LinkSwitchBorders from './links/link.switch.borders'
 import LinkPushOut from './links/link.pushout'
+import LinkDots from './links/link.dots'
+import LinkScaleDown from './links/link.scale.down'
+import LinkShowBorders from './links/link.show.borders'
+import LinkTextFill from './links/link.text.fill'
+import LinkCircleOver from './links/link.circle.over'
 
 export default class LinkStylesPage extends Component {
   render() {
@@ -92,6 +97,51 @@ export default class LinkStylesPage extends Component {
               <LinkPushOut href="#" background={colors.background6}>Profile</LinkPushOut>
               <LinkPushOut href="#" background={colors.background6}>Settings</LinkPushOut>
               <LinkPushOut href="#" background={colors.background6}>Contact</LinkPushOut>
+            </nav>
+          </Section>
+
+          <Section background={colors.background7} foreground={colors.foreground}>
+            <nav>
+              <LinkDots href="#">Home</LinkDots>
+              <LinkDots href="#">Profile</LinkDots>
+              <LinkDots href="#">Settings</LinkDots>
+              <LinkDots href="#">Contact</LinkDots>
+            </nav>
+          </Section>
+
+          <Section background={colors.background8} foreground={colors.foreground}>
+            <nav>
+              <LinkScaleDown href="#">Home</LinkScaleDown>
+              <LinkScaleDown href="#">Profile</LinkScaleDown>
+              <LinkScaleDown href="#">Settings</LinkScaleDown>
+              <LinkScaleDown href="#">Contact</LinkScaleDown>
+            </nav>
+          </Section>
+
+          <Section background={colors.background9} foreground={colors.foreground}>
+            <nav>
+              <LinkShowBorders href="#">Home</LinkShowBorders>
+              <LinkShowBorders href="#">Profile</LinkShowBorders>
+              <LinkShowBorders href="#">Settings</LinkShowBorders>
+              <LinkShowBorders href="#">Contact</LinkShowBorders>
+            </nav>
+          </Section>
+
+          <Section background={colors.background} foreground={colors.foreground}>
+            <nav>
+              <LinkTextFill href="#">Home</LinkTextFill>
+              <LinkTextFill href="#">Profile</LinkTextFill>
+              <LinkTextFill href="#">Settings</LinkTextFill>
+              <LinkTextFill href="#">Contact</LinkTextFill>
+            </nav>
+          </Section>
+
+          <Section background={colors.background3} foreground={colors.foreground}>
+            <nav>
+              <LinkCircleOver href="#">Home</LinkCircleOver>
+              <LinkCircleOver href="#">Profile</LinkCircleOver>
+              <LinkCircleOver href="#">Settings</LinkCircleOver>
+              <LinkCircleOver href="#">Contact</LinkCircleOver>
             </nav>
           </Section>
 
