@@ -32,7 +32,7 @@ const Link = styled.a`
   span {
     display: block;
     padding: 10px 20px;
-    background: ${darken(0.1, colors.background6)};
+    background: ${props => darken(0.1, props.background)};
     transition: transform 0.3s;
   }
 
@@ -44,7 +44,7 @@ const Link = styled.a`
     padding: 8px 0;
     width: 100%;
     height: 100%;
-    color: ${colors.background6};
+    color: ${props => props.background};
     content: attr(data-hover);
     transition: transform 0.3s;
   }

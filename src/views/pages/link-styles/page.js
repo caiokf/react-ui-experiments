@@ -88,10 +88,10 @@ export default class LinkStylesPage extends Component {
 
           <Section background={colors.background6} foreground={colors.foreground}>
             <nav>
-              <LinkPushOut href="#">Home</LinkPushOut>
-              <LinkPushOut href="#">Profile</LinkPushOut>
-              <LinkPushOut href="#">Settings</LinkPushOut>
-              <LinkPushOut href="#">Contact</LinkPushOut>
+              <LinkPushOut href="#" background={colors.background6}>Home</LinkPushOut>
+              <LinkPushOut href="#" background={colors.background6}>Profile</LinkPushOut>
+              <LinkPushOut href="#" background={colors.background6}>Settings</LinkPushOut>
+              <LinkPushOut href="#" background={colors.background6}>Contact</LinkPushOut>
             </nav>
           </Section>
 
